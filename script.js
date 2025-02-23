@@ -1,15 +1,15 @@
+function indexOfIgnoreCase(str: string, subStr: string): number {
 // Handle edge cases
     if (subStr.length === 0) {
-        return 0; // If subStr is empty, return 0 (found at the start)
+        return 0; // If subStr is empty, return 0 (as per common convention)
     }
-    if (str.length === 0) {
-        return -1; // If str is empty and subStr is not, return -1
-    }
-
-    // Convert both strings to lower case for case-insensitive comparison
+    
+    // Convert both strings to lower case
     const lowerStr = str.toLowerCase();
     const lowerSubStr = subStr.toLowerCase();
-
-    // Use indexOf to find the first occurrence of lowerSubStr in lowerStr
-    return lowerStr.indexOf(lowerSubStr);
+    
+    // Find the index of the first occurrence of lowerSubStr in lowerStr
+    const index = lowerStr.indexOf(lowerSubStr);
+    
+    return index; // Return the index or -1 if not found
 }
